@@ -1,4 +1,10 @@
 <div>
+    <div>
+        {{name}}
+    </div>
     <input type="text" placeholder="Please insert a number" [(ngModel)]="value"/>
     <button type="button" class="btn btn-primary m-2" (click)="addToCounter()">Add to Counter</button>
+</div>
+<div>
+    <button type="button" class="btn btn-primary m-2" (click)="changeName()">Update Name</button>
 </div>

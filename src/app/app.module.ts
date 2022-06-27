@@ -4,37 +4,31 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './common/components/navbar/navbar.component';
-import { MpRoutingComponent } from './pages/mp-routing/components/mp-routing/mp-routing.component';
 import {HttpClientModule} from '@angular/common/http';
-import { AgGridModule } from 'ag-grid-angular';
-import { HeaderComponent } from './pages/mp-routing/components/header/header.component';
 import { StoreModule } from '@ngrx/store';
-import { mpRoutingReducer } from './pages/mp-routing/components/state/mprouting.reducer';
-import { CounterComponent } from './pages/counter/components/counter/counter.component';
-import { CounterButtonsComponent } from './pages/counter/components/counter-buttons/counter-buttons.component';
-import { counterReducer } from './pages/counter/components/state/counter.reducer';
-import { CounterOutputComponent } from './pages/counter/components/counter-output/counter-output.component';
-import { CustomCounterComponent } from './pages/counter/components/custom-counter/custom-counter.component';
 import { FormsModule } from '@angular/forms';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from 'src/environments/environment';
+import { EffectsModule } from '@ngrx/effects';
+import { LoadingspinnerComponent } from './common/components/loadingspinner/loadingspinner.component';
+import { appReducer } from './state/app.state';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    MpRoutingComponent,
-    HeaderComponent,
-    CounterComponent,
-    CounterButtonsComponent,
-    CounterOutputComponent,
-    CustomCounterComponent,
+    LoadingspinnerComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    AgGridModule,
     FormsModule,
-    StoreModule.forRoot({destinations: mpRoutingReducer, counter: counterReducer})
+    EffectsModule.forRoot([]),
+    StoreModule.forRoot(appReducer),
+    StoreDevtoolsModule.instrument({
+      logOnly:  environment.production,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CounterComponent } from './pages/counter/components/counter/counter.component';
 import { MpRoutingComponent } from './pages/mp-routing/components/mp-routing/mp-routing.component';
 
 const routes: Routes = [
-  {path: '', component: MpRoutingComponent},
-  {path: 'redm', component: MpRoutingComponent},
-  {path: 'counter', component: CounterComponent}
+  {path: '', loadChildren: () => import('./pages/mp-routing/mprouting.module').then((m) => m.MpRoutingModule)},
+  {path: 'counter', loadChildren: () => import('./pages/counter/counter.module').then((m) => m.CounterModule)},
+  {path: 'auth', loadChildren: () => import('./pages/auth/auth.module').then(m => m.AuthModule)}
 ];
 
 @NgModule({

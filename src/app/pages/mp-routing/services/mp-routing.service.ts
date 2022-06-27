@@ -22,9 +22,9 @@ export class MpRoutingService {
   catchError(this.handleError)
   );
 
-  shutUnshutDestination$ = this.destinationsCRUDAction$.subscribe(data => {
+  /*shutUnshutDestination$ = this.destinationsCRUDAction$.subscribe(data => {
     this.saveDestinaionDetailsOnServer(data);
-  });
+  });*/
   constructor(private http: HttpClient) { }
 
   handleError(errors: Error){
@@ -33,7 +33,7 @@ export class MpRoutingService {
     })
   }
 
-  shutUnshutDestinations(destinations: IMpRouting){
+  /*shutUnshutDestinations(destinations: IMpRouting){
     this.destinationsCRUDSubject.next({action:'update', data: destinations});
   }
 
@@ -43,11 +43,13 @@ export class MpRoutingService {
         console.log(res)
        });
     }
-  }
+  }*/
 
-  updateDestinationDetailsOnServer(destinationData: IMpRouting){
+  updateDestinationDetailsOnServer(destinationData: IMpRouting): Observable<IMpRouting>{
     return this.http.patch<IMpRouting>(`https://macui-4158c-default-rtdb.firebaseio.com/destinations/${destinationData.id}.json`, destinationData);
   }
+
+  
 
 }
 

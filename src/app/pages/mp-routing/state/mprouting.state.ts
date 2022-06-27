@@ -1,6 +1,12 @@
-export const initialState = {
-    destinations: {
-        "destination01": {
+import { IMpRouting } from "../model/IMpRouting"
+
+export interface MpRoutingState{
+  destinations: IMpRouting[];
+}
+
+
+export const initialState: MpRoutingState = {
+    destinations: [{
           "comments": "testing NJ",
           "connection": true,
           "id": "destination01",
@@ -10,7 +16,7 @@ export const initialState = {
           "sessions": "EQSPD1",
           "updatedBy": "Niranjan"
         },
-        "destination02": {
+        {
           "comments": "testing NJ",
           "connection": false,
           "id": "destination02",
@@ -20,7 +26,7 @@ export const initialState = {
           "sessions": "EQSPD2",
           "updatedBy": "Niranjan"
         },
-        "destination03": {
+        {
           "comments": "testing NJ",
           "connection": false,
           "id": "destination03",
@@ -30,7 +36,7 @@ export const initialState = {
           "sessions": "EQSPD3",
           "updatedBy": "Niranjan"
         },
-        "destination04": {
+        {
           "comments": "test MSCO",
           "connection": true,
           "id": "destination04",
@@ -40,7 +46,7 @@ export const initialState = {
           "sessions": "EQSPD4",
           "updatedBy": ""
         },
-        "destination05": {
+        {
           "comments": "test Lydia",
           "connection": true,
           "id": "destination05",
@@ -50,7 +56,7 @@ export const initialState = {
           "sessions": "LYDIA1",
           "updatedBy": ""
         },
-        "destination06": {
+        {
           "comments": "test Lydia",
           "connection": true,
           "id": "destination06",
@@ -60,7 +66,7 @@ export const initialState = {
           "sessions": "LYDIA2",
           "updatedBy": ""
         },
-        "destination07": {
+        {
           "comments": "test Spiderman",
           "connection": true,
           "id": "destination07",
@@ -70,5 +76,5 @@ export const initialState = {
           "sessions": "SPD1",
           "updatedBy": ""
         }
-      }
+      ]
 }
