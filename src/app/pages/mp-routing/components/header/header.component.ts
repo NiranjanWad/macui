@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
   shutUnshutDestination(){
     let updatedRowDetails = {
       comments: 'testing NJ',
-      connection: !this.rowData[0].id,
+      connection: !this.rowData[0].connection,
       id: this.rowData[0].id,
       isAvailable: this.rowData[0].isAvailable,
       name: this.rowData[0].name,
@@ -39,10 +39,7 @@ export class HeaderComponent implements OnInit {
       ...updatedRowDetails,
       id: updatedRowDetails.id
     }
-    //this.mpRoutingService.shutUnshutDestinations(shutDestinationDetails)
     this.store.dispatch(shutUnshutDestination({data:shutDestinationDetails}));
-    //console.log(this.rowData);
-    
   }
 
 }

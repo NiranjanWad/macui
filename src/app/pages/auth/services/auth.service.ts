@@ -21,4 +21,15 @@ export class AuthService {
     const user = new User(data.kind, data.localId, data.email, data.displayName, data.idToken,data.regitered);
     return user;
   }
+
+  getErrorMessage(message: string){
+    switch(message) {
+      case 'EMAIL_NOT_FOUND':
+        return 'Email Not Found';
+      case 'INVALID_PASSWORD':
+        return 'Password is Invalid'
+      default:
+        return 'unknown error occured. Please try again'
+    }
+  }
 }

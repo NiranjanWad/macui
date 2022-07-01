@@ -1,7 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit, Output, ViewChild } from '@angular/core';
 import { DisableButtonService } from '../../services/disable-button.service';
-import { Store } from '@ngrx/store';
-import { IMpRouting } from '../../model/IMpRouting';
 
 @Component({
   selector: 'app-mp-routing',
@@ -15,13 +13,10 @@ export class MpRoutingComponent implements OnInit {
   disableUnShutFlag$ = this.disableButtonsService.disableUnshutButtonAction$;
   rows: any;
   selectedIds: any;
-  constructor(private disableButtonsService: DisableButtonService,private store: Store<{destinations: IMpRouting}>) {
+  constructor(private disableButtonsService: DisableButtonService) {
   }
 
   ngOnInit(): void {
-    this.store.select('destinations').subscribe(data => {
-      console.log(data);
-    });
   }
 
   getSelectedRows(data: any){

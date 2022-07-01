@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState } from './state/app.state';
-import { getLoading } from './state/shared.selector';
+import { getErrorMessage, getLoading } from './state/shared.selector';
 
 
 @Component({
@@ -13,11 +13,12 @@ import { getLoading } from './state/shared.selector';
 export class AppComponent implements OnInit{
   title = 'macui';
   showLoading!: Observable<boolean>;
-
+  errorMessage!: Observable<string>; 
   constructor(private store: Store<AppState>){
   }
 
   ngOnInit(): void {
-    this.showLoading = this.store.select(getLoading)
+    this.showLoading = this.store.select(getLoading);
+    this.errorMessage = this.store.select(getErrorMessage);
   }
 }

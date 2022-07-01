@@ -7,6 +7,7 @@ import { AppState } from 'src/app/state/app.state';
 import { IMpRouting } from '../../model/IMpRouting';
 import { DisableButtonService } from '../../services/disable-button.service';
 import { MpRoutingService } from '../../services/mp-routing.service';
+import { loadDestinations } from '../../state/mprouting.actions';
 import { getDestinations } from '../../state/mprouting.selector';
 import { ShutUnshutButtonsComponent } from './cell-renderers/shut-unshut-buttons/shut-unshut-buttons.component';
 
@@ -50,7 +51,7 @@ export class MpRoutingGridComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //this.rowData$ = this.mpRoutingService.destinations$;
+    this.store.dispatch(loadDestinations());
     this.rowData$ = this.store.select(getDestinations)
   }
 
