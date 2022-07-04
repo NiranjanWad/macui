@@ -5,10 +5,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link" href="#" [routerLink]="['/auth/signup']" *ngIf="!(isAutheticated | async)">Signup</a>
           <a class="nav-link" href="#" [routerLink]="['/']" *ngIf="!(isAutheticated | async)">Login</a>
           <a class="nav-link" href="#" [routerLink]="['/mprouting']" *ngIf="isAutheticated | async">MP Routing Engine</a>
-          <a class="nav-link" href="#" [routerLink]="['/counter']" *ngIf="isAutheticated | async">Pilot Control Management</a>
+          <a class="nav-link" href="#" [routerLink]="['/pilotcontrol']" *ngIf="isAutheticated | async">Pilot Control Management</a>
           <a class="nav-link" href="#" [routerLink]="['/mprouting']" *ngIf="isAutheticated | async">Logout</a>
         </div>
       </div>

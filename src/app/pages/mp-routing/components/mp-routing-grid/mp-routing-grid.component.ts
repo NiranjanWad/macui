@@ -46,8 +46,7 @@ export class MpRoutingGridComponent implements OnInit {
   gridApi: any;
   rowData$!: Observable<IMpRouting[]>;
   
-  constructor(private mpRoutingService: MpRoutingService, private disableButtonsService: DisableButtonService,
-    private store: Store<AppState>) {
+  constructor(private disableButtonsService: DisableButtonService, private store: Store<AppState>) {
   }
 
   ngOnInit(): void {

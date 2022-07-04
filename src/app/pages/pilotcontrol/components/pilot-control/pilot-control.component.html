@@ -1,0 +1,2 @@
+<app-pilotcontrol-header [count]="selectedRowCount" [selectedSymbols]="selectedSymbols"></app-pilotcontrol-header>
+<app-pilot-control-grid (selectedRowCount)="getSelectedRowCount($event)" (selectedSymbols)="getSelectedSymbols($event)"></app-pilot-control-grid>

@@ -1,0 +1,34 @@
+<div class="header-container m-2">
+    <div id="counter">
+        <span class="selection">
+            <span class="selection-count">{{count}}</span>
+            <span class="selection-text">Selected</span>
+        </span>
+    </div>
+    <div class="channels">
+        <label for="isLydiaD"> Lydia D:</label>&nbsp;
+        <input type="checkbox" id="isLydiaD" name="LydiaD" value="isLydiaD" (change)="getDetails($event)">&nbsp;
+
+        <label for="isUma"> UMA:</label>&nbsp;
+        <input type="checkbox" id="isUma" name="uma" value="isUma" (change)="getDetails($event)">&nbsp;
+
+        <label for="isSma"> SMA:</label>&nbsp;
+        <input type="checkbox" id="isSma" name="sma" value="isSma" (change)="getDetails($event)">&nbsp;
+
+        <label for="isPdp"> PDP:</label>&nbsp;
+        <input type="checkbox" id="isPdp" name="pdp" value="isPdp" (change)="getDetails($event)">&nbsp;
+
+        <label for="isMso"> MSO:</label>&nbsp;
+        <input type="checkbox" id="isMso" name="mso" value="isMso" (change)="getDetails($event)">&nbsp;
+    </div>
+    <div id="actions">
+        <button type="button" class="enablebtn btn btn-success" [disabled]="isDisabled" (click)="bulkEnable()">BULK ENABLE</button>
+        <button type="button" class="disablebtn btn btn-danger" [disabled]="isDisabled" (click)="bulkDisable()">BULK DISABLE</button>
+    </div>
+    <div id="mpflow">
+        <button type="button" class="enablebtn btn btn-success">KILL SWITCH</button>
+        <button type="button" class="disablebtn btn btn-danger">ROUTING SWITCH</button>
+    </div>
+
+</div>
+

@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import { loadDestinationsSuccess, shutUnshutDestination, updateSuccessful} from "./mprouting.actions";
+import { loadDestinationsSuccess, updateSuccessful} from "./mprouting.actions";
 import { initialState } from "./mprouting.state";
 
 const _mpRoutingReducer = createReducer(initialState, 

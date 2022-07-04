@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ICellRendererAngularComp } from 'ag-grid-angular';
-import { ICellRenderer, ICellRendererParams } from 'ag-grid-community';
+import { ICellRendererParams } from 'ag-grid-community';
 import { IMpRouting } from 'src/app/pages/mp-routing/model/IMpRouting';
 import { shutUnshutDestination } from 'src/app/pages/mp-routing/state/mprouting.actions';
 import { AppState } from 'src/app/state/app.state';
