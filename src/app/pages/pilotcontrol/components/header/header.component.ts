@@ -28,11 +28,20 @@ export class HeaderComponent implements OnInit {
 
   getDetails(event: Event){
     let ele = event.target as HTMLInputElement;
-    this.isLydiaD = ele.value === 'isLydiaD' && ele.checked ? !this.isLydiaD : false; 
-    this.isUma = ele.value === 'isUma' && ele.checked ? !this.isUma : false;
-    this.isSma = ele.value === 'isSma' && ele.checked ? !this.isSma : false;
-    this.isPdp = ele.value === 'isPdp' && ele.checked ? !this.isPdp : false;
-    this.isMso = ele.value === 'isMso' && ele.checked ? !this.isMso : false;
+    if(ele.value === 'isLydiaD')
+       this.isLydiaD =  ele.checked ? true : false; 
+    if(ele.value === 'isUma')
+      this.isUma = ele.checked ? true : false;
+    if(ele.value === 'isSma')
+      this.isSma =  ele.checked ? true : false;
+    if(ele.value === 'isPdp')
+      this.isPdp =  ele.checked ? true : false;
+    if(ele.value === 'isMso')
+      this.isMso =  ele.checked ? true: false;
+    console.log("Lydia", this.isLydiaD);
+    console.log("SMA", this.isSma);
+    
+    
     
     this.isDisabled = (this.isLydiaD || this.isMso || this.isPdp || this.isSma || this.isUma) ? false : true; 
   }
